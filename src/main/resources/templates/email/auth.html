@@ -1,20 +1,54 @@
 <!DOCTYPE html>
+
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+    <meta charset="UTF-8">
     <title>이메일 인증</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <style>
+        .nanum-pen-script-regular {
+            font-family: "Nanum Pen Script", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+    </style>
 </head>
 <body>
-<dl>
-    <dt>제목</dt>
-    <dd th:text="${subject}"></dd>
-</dl>
-<dl>
-    <dt>내용</dt>
-    <dd th:utext="${message}"></dd>
-</dl>
-<dl>
-    <dt>인증번호</dt>
-    <dd th:text="${authNum}"></dd>
-</dl>
+
+<body style="font-family: Arial, sans-serif; background-color:#f4f4f4; margin: 0; padding: 20px;">
+
+<div style="max-width: 500px; margin: 0 auto; background-color:#E2E2E2; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+    <h2 style="color: #333333; text-align: center; margin-bottom: 20px;">🍀JOY_FARM</h2>
+
+    <p  class="nanum-pen-script-regular" style="font-size: 20px; color: #666666; text-align: center; margin-bottom: 30px;">
+
+        여러분을 환영합니다😊<br>
+
+    </p>
+
+    <dl style="margin-bottom: 20px;">
+        <dt style="font-size: 16px; font-weight: bold; color: #333;">제목</dt>
+        <p style="font-size: 16px; color: #666666; text-align: left; margin-bottom: 30px;">
+            회원가입 인증메일 입니다 <br>
+        </p>
+    </dl>
+
+
+    <dl style="margin-bottom: 20px;">
+        <dt style="font-size: 16px; font-weight: bold; color: #333;">내용</dt>
+        <dd th:utext="${message}" style="font-size: 16px; color: #666666; margin-left: 10px;"></dd>
+    </dl>
+
+    <dl style="margin-bottom: 20px;">
+        <dt style="font-size: 16px; font-weight: bold; color: #333;">인증번호</dt>
+        <dd th:text="${authNum}" style="font-size: 24px; font-weight: bold; color: #333333; padding: 10px; border-radius: 4px; text-align: center; margin-left: 10px; display: inline-block;"></dd>
+    </dl>
+</div>
 </body>
-</html>
+
+
+
+
