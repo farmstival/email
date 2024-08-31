@@ -25,7 +25,11 @@ public class EmailController {
     public JSONData sendVerifyEmail(@RequestParam("email") String email, @RequestParam("uid") String uid) {
         JSONData data = new JSONData();
 
-        boolean result = verifyService.sendCode(email, uid);
+        boolean result = false;
+        if (email.matches("^[a-zA-Z0-9+-_.]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$")) {
+            result = verifyService.sendCode(email, uid);
+        }
+
         data.setSuccess(result);
 
         return data;
